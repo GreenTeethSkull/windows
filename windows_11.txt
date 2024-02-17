@@ -1,0 +1,86 @@
+WINDOWS 11
+
+--Problemas
+SFC /scannow
+
+--Fuentes
+Hack Nerd Font
+JetBrainsMono Nerd Font
+
+--regedit (Para Administrador pedit contraseña)
+Equipo\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+ConsentPromptBehaviorAdmin = 1
+
+--Sistema
+Notificaciones - Desactivar
+Uso compartido en proximidad - Desactivado
+
+--Sistema - Asistente de concentración
+Desactivar
+
+-- Red e Internet
+Asignación de servidor DNS Manual
+8.8.8.8
+1.1.1.1
+
+--Personalización
+Modo - Oscuro
+Efectos de transparencia - desactivado
+Color de énfasis - verde
+Pantalla de bloqueo - desactivar y cambiar
+Barra de tareas - desactivar iconos
+Inicio - Mostrar los elementos abiertos recientemente - desactivar
+
+--Aplicaciones
+Inicio - desactivar
+Aplicaciones y caracteristicas - desactivar segundo plano - Desinstalar
+
+--Juegos
+Xbox Game Bar - desactivar
+
+--Accesibilidad 
+Efectos Visuales - Efectos de animación - desactivar
+
+--Windows update
+Opciones Avanzadas - (Desactivao) Optimización de distribución - Desactivado
+Opciones Avanzadas - (Desactivao) Optimización de distribución - opciones avanzadas - Limitar
+
+--Configuracion del sistema
+Arranque - Opciones Avanzadas - Numero de procesadores - máximo
+Servicios - Deshabilitar
+
+--Configuración de Power Shell
+Descargar - Windows Terminal 
+Utilizar Oh my Posh
+en la pwsh escribir 'notepad $PROFILE' y pegar 
+-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\rudolfs-dark.omp.json" | Invoke-Expression
+-Import-Module -Name Terminal-Icons
+
+-Buscar Terminal Icons
+
+--Cambiar a horario UTC en Windows
+regedit
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation
+New > DWORD (32-bit) Value
+RealTimeIsUniversal = 1 (Hexadecimal)
+
+--Batería
+Battery Percentage - Pure Battery - add-on
+Copiar archivo FullBat.vbs en C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
+
+--Shortcuts
+scoop install autohotkey
+Copiar archivo shortcuts.ahk en C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
+
+--GeForce Experience
+Desactivar Battery Boost
+
+--install scoop
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+irm get.scoop.sh | iex
+scoop bucket add extras
+scoop install neofetch
+scoop install git
+scoop install sudo
+scoop update
+scoop update *
